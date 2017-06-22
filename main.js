@@ -27,6 +27,27 @@ var character = {
 
 };
 
+// Check to see if the player entered a NAME. If not, give them another chance
+if (!character.name) {
+    character.name = window.prompt("I don't know what to call you if you don't enter a name. If you don't answer I will be forced to name you myself... Last chance. What is your name?");
+
+    // If a name is still not entered, assign a name to the character
+    if (!character.name) {
+        window.alert("Well I did try to warn you... Jimmity McGibblets it is then!");
+        character.name = "Jimmity McGibblets";
+    }
+}
+
+// Check to see if the player chose a CLASS. If not, give them another chance
+if (!character.characterClass) {
+    character.characterClass = window.prompt("How will you survive if you don't know your skills? Please choose a CLASS. If you don't, you will regret it! (Choose from: SOLDIER, DOCTOR, THIEF, SCIENTIST, ATHLETE").toUpperCase();
+
+    // If a class still is not chosen...
+    if (!character.characterClass) {
+        window.alert("Well I did try to warn you... CLOWN it is!")
+        character.characterClass = "CLOWN";
+    }
+}
 
 // Provide the player with a random beginning scerario. Create an array of several options.
 var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. You tiptoe to the door and peek into the hall. There are zombies everywhere! Do you search for a WEAPON, HIDE, or RUN?", "You are sitting in the living room of your boarded up house. Your father and brother have gone out scavenging, but have yet to return...", "You are running down a long road surrounded on each side by trees. There is a horde of zombies chasing you. Suddenly, you trip...", "You are locked in a prison cell, forgotten and left to die. A zombie guard is about to walk by. You can see the keys to the cells on his belt...", ""];
