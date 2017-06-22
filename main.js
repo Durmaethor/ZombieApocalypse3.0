@@ -49,6 +49,45 @@ if (!character.characterClass) {
     }
 }
 
+// Assign the various classes increases to valid stats
+
+// Choose from: SOLDIER, DOCTOR, THIEF, SCIENTIST, ATHLETE
+
+        //     health: 5,
+        //     strength: 5,
+        //     stealth: 5,
+        //     intelligence: 5,
+        //     speed: 5,
+
+// If character is SOLDIER, change strength property from 5 to 10
+if (character.characterClass === "SOLDIER") {
+    character.strength = 10;
+}
+// If character is DOCTOR, change health property from 5 to 10
+if (character.characterClass === "DOCTOR") {
+    character.health = 10;
+}
+// If character is THIEF, change stealth property from 5 to 10
+if (character.characterClass === "THIEF") {
+    character.stealth = 10;
+}
+// If character is SCIENTIST, change intelligence from 5 to 10
+if (character.characterClass === "SCIENTIST") {
+    character.intelligence = 10;
+}
+// If character is ATHLETE, change speed property from 5 to 10
+if (character.characterClass === "ATHLETE") {
+    character.speed = 10;
+}
+// If character is CLOWN, change properties to the following
+if (character.characterClass === "CLOWN") {
+    character.health = 2;
+    character.strength = 2;
+    character.stealth = 2;
+    character.intelligence = 2;
+    character.speed = 2;
+}
+
 // Provide the player with a random beginning scerario. Create an array of several options.
 var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. You tiptoe to the door and peek into the hall. There are zombies everywhere! Do you search for a WEAPON, HIDE, or RUN?", "You are sitting in the living room of your boarded up house. Your father and brother have gone out scavenging, but have yet to return...", "You are running down a long road surrounded on each side by trees. There is a horde of zombies chasing you. Suddenly, you trip...", "You are locked in a prison cell, forgotten and left to die. A zombie guard is about to walk by. You can see the keys to the cells on his belt...", ""];
 
@@ -59,3 +98,6 @@ function randomNumber(range) {
         return Math.round(Math.random() * range);
     }
 }
+
+// Assign random beginningScenario via following function
+window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]);
