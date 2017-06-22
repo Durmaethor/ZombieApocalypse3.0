@@ -23,7 +23,7 @@ var character = {
     name: window.prompt("What is your name?"),
 
     // Ask the player to choose a CLASS for their character
-    characterClass: window.prompt("Surviving in a zombie apocalypse is tough. Your previous life may bring some advantages. What were you before the apocalypse??? (Choose from: SOLDIER, DOCTOR, THIEF, SCIENTIST, ATHLETE").toUpperCase();
+    characterClass: window.prompt("Surviving in a zombie apocalypse is tough. Your previous life may bring some advantages. What were you before the apocalypse??? (Choose from: SOLDIER, DOCTOR, THIEF, SCIENTIST, ATHLETE").toUpperCase()
 
 };
 
@@ -89,7 +89,7 @@ if (character.characterClass === "CLOWN") {
 }
 
 // Provide the player with a random beginning scerario. Create an array of several options.
-var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. You tiptoe to the door and peek into the hall. There are zombies everywhere! Do you search for a WEAPON, HIDE, or RUN?", "You are sitting in the living room of your boarded up house. Your father and brother have gone out scavenging, but have yet to return...", "You are running down a long road surrounded on each side by trees. There is a horde of zombies chasing you. Suddenly, you trip...", "You are locked in a prison cell, forgotten and left to die. A zombie guard is about to walk by. You can see the keys to the cells on his belt...", ""];
+var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. Your head hurts, and you are having a tough time remembering what happened to you. You know that your name is " + character.name + ", but aside from that know little else. You tiptoe to the door and peek into the hall. There are zombies everywhere! Do you search for a WEAPON, HIDE, or RUN?", "You are sitting in the living room of your boarded up house. Your father and brother have gone out scavenging, but have yet to return. Suddenly you hear scratching noises coming from outside. Do you GO UPSTAIRS, SEARCH for a weapon, or LOOK outside?", "You are running down a long road surrounded on each side by trees. There is a horde of zombies chasing you. Suddenly, you trip... Do you GIVE UP and lay there, GET UP and continue running, or frantically LOOK AROUND you for a weapon?", "You are locked in a prison cell, forgotten and left to die. Before the apocalypse you were a " + character.characterClass + ", but that seems completely irrelevent now. The only thing that matters now is if you can survive, which is an impossibility locked in this cage. You go to the bars and look around for a way out. Suddenly you see your chance! A zombie guard is about to walk by and you can see the keys to the cells on his belt... Do you cry out to get it's ATTENTION, wait SILENTLY and try to grab them without being noticed, or look for another OPTION?", "Your name is General " + character.name + ". Before the apocalypse you were a renowned " + character.characterClass + ", but when the dead started walking you quickly joined the military as it had the best odds of survival. You have taken a platoon of men and are engaging some bandits that have attacked a small village of survivors. All the gunfire has attracted a large horde of zombies. You are now blocked on both sides by enemies. Do you give the order to RETREAT, FIGHT, or SACRIFICE your men and run?"];
 
 // Random number function that generates a whole number between 0 and RANGE
 function randomNumber(range) {
@@ -101,3 +101,5 @@ function randomNumber(range) {
 
 // Assign random beginningScenario via following function
 window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]).toUpperCase();
+
+// Create SWITCH CASES depending on the scenario and choice made to continue the player's story
