@@ -89,7 +89,7 @@ if (character.characterClass === "CLOWN") {
 }
 
 // Provide the player with a random beginning scerario. Create an array of several options.
-var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. Your head hurts, and you are having a tough time remembering what happened to you. You know that your name is " + character.name + ", but aside from that know little else. You tiptoe to the door and peek into the hall. There are zombies everywhere! Do you search for a WEAPON, HIDE, or RUN?", "You are sitting in the living room of your boarded up house. Your father and brother have gone out scavenging, but have yet to return. Suddenly you hear scratching noises coming from outside. Do you GO UPSTAIRS, SEARCH for a weapon, or LOOK outside?", "You are running down a long road surrounded on each side by trees. There is a horde of zombies chasing you. Suddenly, you trip... Do you GIVE UP and lay there, GET UP and continue running, or frantically LOOK AROUND you for a weapon?", "You are locked in a prison cell, forgotten and left to die. Before the apocalypse you were a " + character.characterClass + ", but that seems completely irrelevent now. The only thing that matters now is if you can survive, which is an impossibility locked in this cage. You go to the bars and look around for a way out. Suddenly you see your chance! A zombie guard is about to walk by and you can see the keys to the cells on his belt... Do you cry out to get it's ATTENTION, wait SILENTLY and try to grab them without being noticed, or look for another OPTION?", "Your name is General " + character.name + ". Before the apocalypse you were a renowned " + character.characterClass + ", but when the dead started walking you quickly joined the military as it had the best odds of survival. You have taken a platoon of men and are engaging some bandits that have attacked a small village of survivors. All the gunfire has attracted a large horde of zombies. You are now blocked on both sides by enemies. Do you give the order to RETREAT, FIGHT, or SACRIFICE your men and run?"];
+var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. Your head hurts, and you are having a tough time remembering what happened to you. You know that your name is " + character.name + ", but aside from that know little else. You tiptoe to the door and peek into the hall. There are zombies everywhere! Do you search for a WEAPON, HIDE, or RUN?"/*, "You are sitting in the living room of your boarded up house. Your father and brother have gone out scavenging, but have yet to return. Suddenly you hear scratching noises coming from outside. Do you GO UPSTAIRS, SEARCH for a weapon, or LOOK outside?", "You are running down a long road surrounded on each side by trees. There is a horde of zombies chasing you. Suddenly, you trip... Do you GIVE UP and lay there, GET UP and continue running, or frantically LOOK AROUND you for a weapon?", "You are locked in a prison cell, forgotten and left to die. Before the apocalypse you were a " + character.characterClass + ", but that seems completely irrelevent now. The only thing that matters now is if you can survive, which is an impossibility locked in this cage. You go to the bars and look around for a way out. Suddenly you see your chance! A zombie guard is about to walk by and you can see the keys to the cells on his belt... Do you cry out to get it's ATTENTION, wait SILENTLY and try to grab them without being noticed, or look for another OPTION?", "Your name is General " + character.name + ". Before the apocalypse you were a renowned " + character.characterClass + ", but when the dead started walking you quickly joined the military as it had the best odds of survival. You have taken a platoon of men and are engaging some bandits that have attacked a small village of survivors. All the gunfire has attracted a large horde of zombies. You are now blocked on both sides by enemies. Do you give the order to RETREAT, FIGHT, or SACRIFICE your men and run?"*/];
 
 // Random number function that generates a whole number between 0 and RANGE
 function randomNumber(range) {
@@ -103,3 +103,22 @@ function randomNumber(range) {
 window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]).toUpperCase();
 
 // Create SWITCH CASES depending on the scenario and choice made to continue the player's story
+switch(beginningScenarios) {
+    case 'WEAPON':
+        var weapon = prompt("You look around the room and see a BONESAW, a NEEDLE, or a DEFIBRILLATOR").toUpperCase();
+        if(weapon === 'BONESAW') {
+            window.alert("You grab the bonesaw and move towards the door. Suddenly a zombie bursts through the door and rushes you. You move to swing the bonesaw, but your arm stops mid-swing. You realize in horror that the bonesaw is plugged in, but your chance is gone and the zombie is already upon you. You feel a sharp pain in your shoulder and realize that you have been bitten. You feel warm liquid running freely down your back and know that this is the end...");
+            
+            // Set outcome variable to LOSE
+            outcome = "die";
+        }
+        break;
+}
+
+// Check to see if an outcome has been assigned and alert appropriate result
+if (outcome === "die") {
+    window.alert("You have died!");
+}
+else if (outcome === "survive") {
+    window.alert("You have survived!");
+}
