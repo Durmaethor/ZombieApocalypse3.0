@@ -99,7 +99,7 @@ function randomNumber(range) {
     }
 }
 
-// Assign random beginningScenario via following function
+// Assign random beginningScenario via following function (and assign response to a new variable?)
 window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]).toUpperCase();
 
 // Create SWITCH CASES depending on the scenario and choice made to continue the player's story
