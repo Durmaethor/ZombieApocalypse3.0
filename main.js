@@ -100,4 +100,4 @@ function randomNumber(range) {
 }
 
 // Assign random beginningScenario via following function
-window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]);
+window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]).toUpperCase();
