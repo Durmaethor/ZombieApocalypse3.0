@@ -16,14 +16,16 @@ var character = {
     health: 5,
     strength: 5,
     stealth: 5,
+    intelligence: 5,
+    speed: 5,
 
     // Ask the player to choose a NAME
     name: window.prompt("What is your name?"),
 
     // Ask the player to choose a CLASS for their character
-    characterClass: window.prompt("Surviving in a zombie apocalypse is tough. Your previous life may bring some advantages. What were you before the apocalypse??? (Choose from: SOLDIER, DOCTOR, THIEF, ")
+    characterClass: window.prompt("Surviving in a zombie apocalypse is tough. Your previous life may bring some advantages. What were you before the apocalypse??? (Choose from: SOLDIER, DOCTOR, THIEF, SCIENTIST, ATHLETE").toUpperCase();
 
-}
+};
 
 
 // Provide the player with a random beginning scerario. Create an array of several options.
@@ -32,5 +34,7 @@ var beginningScenarios = ["You wake up in the hospital. It is eerily quiet. You 
 // Random number function that generates a whole number between 0 and RANGE
 function randomNumber(range) {
     "use strict";
-
+    if (typeof range === "number") {
+        return Math.round(Math.random() * range);
+    }
 }
