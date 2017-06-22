@@ -8,6 +8,9 @@ var outcome;
 // Alert the player with the Introduction to the story and game.
 window.alert("The world has come to an end, and is now infested with the walking dead. There is no hope, no cure, only survival. Will you survive?");
 
+// Let the player know that they will be creating a character
+window.alert("Time to create your character");
+
 // Create a character OBJECT
 var character = {
     health: 5,
@@ -18,7 +21,7 @@ var character = {
     name: window.prompt("What is your name?"),
 
     // Ask the player to choose a CLASS for their character
-    characterClass: window.prompt("Surviving in a zombie apocalypse is tough. Your previous life may bring some advantages. What were you before the apocalypse??? (Choose from: Soldier, Doctor, ")
+    characterClass: window.prompt("Surviving in a zombie apocalypse is tough. Your previous life may bring some advantages. What were you before the apocalypse??? (Choose from: SOLDIER, DOCTOR, THIEF, ")
 
 }
 
