@@ -110,7 +110,7 @@ switch(choice) {
             if(character.characterClass === 'SOLDIER') {
                 window.alert("You grab the bonesaw and move towards the door. Suddenly a zombie bursts through the door and rushes you. You move to swing the bonesaw, but your arm stops mid-swing. You realize in horror that the bonesaw is plugged in, but fortunately in the previous world you were a " + character.characterClass + " and your strength is unmatched. You continue the swing, pulling the cord from the wall and hitting the zombie square in the forehead." );
 
-                // Set outcome to "survive"
+                // Set outcome to SURVIVE
                 outcome = 'survive';
             } 
             else {
@@ -122,20 +122,29 @@ switch(choice) {
         }
         else if(weapon === 'NEEDLE') {
             var stab = window.prompt("You grab the needle and position yourself behind the door. A zombie bursts into the room and walks right past you. You slowly move up behind the zombie and grab it from behind. Where do you stab the zombie? In the NECK, HEART, or EYE?").toUpperCase();
-            if(stab === 'NECK') {
+            if(character.characterClass === 'DOCTOR') {
+                    window.alert("Your extensive knowledge of anatomy as a " + character.characterClass + " shows you that the only true way to kill anything is by  killing the brain. Because of this, you slam the needle into the zombie's eye, penetrating it's brain. The zombie immediately drops to the ground, now truly dead.");
+
+                    // set outcome to SURVIVE
+                    outcome = "survive";
+            }
+            else if(stab === 'NECK') {
                 window.alert("You are a fool and stab the zombie in the neck, lodging the needle into its spine where it gets stuck. The zombie shakes you off and turns on you...");
                 
                 //set outcome variable to DIE
                 outcome = "die";
             }
             else if(stab === 'HEART') {
-                window.alert("Your extensive knowledge of anatomy leads you to plunge the needle into the zombie's heart. You know for sure this will kill the zombie. Unfortunately you are wrong. You scream in horror as you realize too late that this will not kill a zombie...")
+                window.alert("Your extensive knowledge of anatomy (or so you believe) leads you to plunge the needle into the zombie's heart. You know for sure this will kill the zombie. Unfortunately you are wrong. You scream in horror as you realize too late that this will not kill a zombie...");
 
                 // set outcome to DIE
                 outcome = "die";
             }
             else if(stab === 'EYE') {
-                window.alert("")
+                window.alert("You plunge the needle through the zombie's eye, penetrating the brain. The zombie immediately drops to the floor, truly dead. You breathe a sigh of relief, making a mental note of the best way to kill future zombies.");
+
+                // set outcome to SURVIVE
+                outcome = "survive";
             }
         }
         break; 
