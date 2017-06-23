@@ -100,10 +100,10 @@ function randomNumber(range) {
 }
 
 // Assign random beginningScenario via following function (and assign response to a new variable?)
-window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]).toUpperCase();
+var choice = window.prompt(beginningScenarios[randomNumber(beginningScenarios.length -1)]).toUpperCase();
 
 // Create SWITCH CASES depending on the scenario and choice made to continue the player's story
-switch(beginningScenarios) {
+switch(choice) {
     case 'WEAPON':
         var weapon = prompt("You look around the room and see a BONESAW, a NEEDLE, or a DEFIBRILLATOR").toUpperCase();
         if(weapon === 'BONESAW') {
