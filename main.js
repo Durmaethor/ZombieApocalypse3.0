@@ -146,6 +146,10 @@ switch(choice) {
                 // set outcome to SURVIVE
                 outcome = "survive";
             }
+            else { // If the player does not make a choice
+                window.alert("You take too long to decide and the zombie tears out your throat.");
+                outcome = "die";
+            }
         }
         break; 
 }
