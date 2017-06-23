@@ -118,6 +118,7 @@ switch(choice) {
                 
                 // Set outcome variable to DIE
                 outcome = "die";
+            }
         }
         else if(weapon === 'NEEDLE') {
             var stab = window.prompt("You grab the needle and position yourself behind the door. A zombie bursts into the room and walks right past you. You slowly move up behind the zombie and grab it from behind. Where do you stab the zombie? In the NECK, HEART, or EYE?").toUpperCase();
