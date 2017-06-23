@@ -123,7 +123,7 @@ switch(choice) {
         else if(weapon === 'NEEDLE') {
             var stab = window.prompt("You grab the needle and position yourself behind the door. A zombie bursts into the room and walks right past you. You slowly move up behind the zombie and grab it from behind. Where do you stab the zombie? In the NECK, HEART, or EYE?").toUpperCase();
             if(character.characterClass === 'DOCTOR') {
-                    window.alert("Your extensive knowledge of anatomy as a " + character.characterClass + " shows you that the only true way to kill anything is by  killing the brain. Because of this, you slam the needle into the zombie's eye, penetrating it's brain. The zombie immediately drops to the ground, now truly dead.");
+                    window.alert("Your extensive knowledge of anatomy as a " + character.characterClass + " shows you that the only true way to kill anything is by killing the brain. Because of this, you slam the needle into the zombie's eye, penetrating it's brain. The zombie immediately drops to the ground, now truly dead.");
 
                     // set outcome to SURVIVE
                     outcome = "survive";
