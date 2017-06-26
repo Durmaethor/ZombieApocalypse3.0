@@ -152,6 +152,7 @@ switch(choice) {
             outcome = "die";
             }
         break; 
+    case 'HIDE':
 }
 
 // Check to see if an outcome has been assigned and alert appropriate result
