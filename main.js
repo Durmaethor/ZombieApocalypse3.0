@@ -106,6 +106,7 @@ var choice = window.prompt(beginningScenarios[randomNumber(beginningScenarios.le
 switch(choice) {
     case 'WEAPON':
         var weapon = prompt("You look around the room and see a BONESAW, a NEEDLE, or a DEFIBRILLATOR").toUpperCase();
+        // If they choose the BONESAW, do the following:
         if(weapon === 'BONESAW') {
             if(character.characterClass === 'SOLDIER') {
                 window.alert("You grab the bonesaw and move towards the door. Suddenly a zombie bursts through the door and rushes you. You move to swing the bonesaw, but your arm stops mid-swing. You realize in horror that the bonesaw is plugged in, but fortunately in the previous world you were a " + character.characterClass + " and your strength is unmatched. You continue the swing, pulling the cord from the wall and hitting the zombie square in the forehead." );
@@ -120,6 +121,7 @@ switch(choice) {
                 outcome = "die";
             }
         }
+        // If they choose the NEEDLE, do the following:
         else if(weapon === 'NEEDLE') {
             var stab = window.prompt("You grab the needle and position yourself behind the door. A zombie bursts into the room and walks right past you. You slowly move up behind the zombie and grab it from behind. Where do you stab the zombie? In the NECK, HEART, or EYE?").toUpperCase();
             if(character.characterClass === 'DOCTOR') {
@@ -147,12 +149,43 @@ switch(choice) {
                 outcome = "survive";
             } 
         }
-        else { // If the player does not make a choice
+        // If they choose the DEFIBRILLATOR, do the following:
+        else if (weapon === 'DEFIBRILLATOR') {
+            var shock = window.prompt("Almost as a sick joke, you grab the defibrillator. Do you start to CHARGE it? Or do you use it to simply SMASH in skulls with?");
+            if(character.characterClass = "SCIENTIST") {
+                window.alert("Before the apocalypse your were a " + character.characterClass + ", and as such you know some secrets about devices like the defibrillator. You push a few extra buttons to 'super-charge' the unit. Just then a zombie bursts through the door and lunges at you. You grab the paddles and rub them together, increasing their power. The zombie gets within distance and you place the paddles on it's face. You push the buttons and the zombie's head immediately explodes. You are covered in blood and brains, but you live to fight another day thanks to your intelligence.");
+
+                // set outcome to SURVIVE
+                outcome = 'survive';
+            }
+            if(shock === 'CHARGE') {
+                var next = window.prompt("You slam the button down that says 'charge' and start to wait impatiently. Just then a zombie bursts through the door and lunges at you. You grab the half charged paddles and attack the zombie with them. The shock knocks the zombie off it's feet and starts it on fire, but it immediately starts to pull itself up... Do you try to shock it AGAIN, or smash it with the whole UNIT?");
+                if(next === 'AGAIN') {
+                    window.alert("You shock the zombie again, but the paddles are very low on charge and it does nothing to stop it advancing. You turn and try to run, but it's too late...");
+
+                    // set outcome to DIE
+                    outcome = 'die';
+                }
+                else if(next === 'UNIT') {
+                    window.alert("Clearly the first shock did nothing but aggravate the zombie, although it did light it on fire, but still you decide to try another strategy. Using all your strength you heave the defibrillator above your head and slam it down on the zombie. Skull and brains splat all over you and the room, but the job is done and the zombie is dead. You let out a long overdue sigh of relief.");
+
+                    // set outcome to survive
+                    outcome = 'survive';
+                }
+            }
+            else if(shock === 'SMASH') {
+                window.alert("You grab the device and lift it above your head proceeding to slam it down upon the zombie. The zombie is immediately killed.");
+            }
+        }
+        // If the player does not make a choice
+        else { 
             window.alert("You take too long to decide and the zombie tears out your throat.");
             outcome = "die";
             }
         break; 
+    // Break and start next case    
     case 'HIDE':
+        var hide = prompt("You frantically look around the room for a hiding spot. You see a CURTAIN, the BED, and a CLOSET. Where do you hide?").toUpperCase();
 }
 
 // Check to see if an outcome has been assigned and alert appropriate result
