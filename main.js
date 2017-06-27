@@ -1,3 +1,4 @@
+    
 // This is a simple random adventure game created in JavaScript. 
 
 // ZOMBIE APOCALYPSE 3.0
@@ -153,7 +154,7 @@ switch(choice) {
         else if (weapon === 'DEFIBRILLATOR') {
             var shock = window.prompt("Almost as a sick joke, you grab the defibrillator. Do you start to CHARGE it? Or do you use it to simply SMASH in skulls with?");
             if(character.characterClass = "SCIENTIST") {
-                window.alert("Before the apocalypse your were a " + character.characterClass + ", and as such you know some secrets about devices like the defibrillator. You push a few extra buttons to 'super-charge' the unit. Just then a zombie bursts through the door and lunges at you. You grab the paddles and rub them together, increasing their power. The zombie gets within distance and you place the paddles on it's face. You push the buttons and the zombie's head immediately explodes. You are covered in blood and brains, but you live to fight another day thanks to your intelligence.");
+                window.alert("Silly you! Before the apocalypse your were a " + character.characterClass + ", and as such you know some secrets about devices like the defibrillator. You push a few extra buttons to 'super-charge' the unit. Just then a zombie bursts through the door and lunges at you. You grab the paddles and rub them together, increasing their power. The zombie gets within distance and you place the paddles on it's face. You push the buttons and the zombie's head immediately explodes. You are covered in blood and brains, but you live to fight another day thanks to your intelligence.");
 
                 // set outcome to SURVIVE
                 outcome = 'survive';
@@ -195,3 +196,4 @@ if (outcome === "die") {
 else if (outcome === "survive") {
     window.alert("You have survived!");
 }
+
